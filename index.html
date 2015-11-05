@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Javascript | jQuery</title>
+        <!-- <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script> --> 
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> 
+         <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            #padre{
+                background: #FF5722;
+                width: 100%;
+                height: 100px;
+                float: left;
+            }
+            .hijo{
+                background: #795548;
+                width: 50%;
+                height: 50px;
+                margin: 25px auto; 
+            }
+         </style>
+    </head>
+    <body>
+        <div id="padre">    
+            <div class="hijo"></div>
+        </div>
+        <script type="text/javascript">
+            $( document ).ready(function() {
+                console.time('jQuery');
+                var $div = $("#padre .hijo");
+                console.timeEnd('jQuery');
+            
+                console.time('Nativo');
+                var div = document.querySelectorAll("#padre .hijo");
+                console.timeEnd('Nativo');
+            });
+        </script>
+    </body>
+</html>
